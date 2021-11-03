@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+#
+# Smart GitHub PR resolution
+#
+# If there is a PR for the current branch, opens it immediately in the browser,
+# or creates one otherwise.
+
+if gh pr status --json=number | jq '.currentBranch.number' | grep -qE '\d+'; then
+  gh pr view -w
+else
+  gh pr create -w
+fi
