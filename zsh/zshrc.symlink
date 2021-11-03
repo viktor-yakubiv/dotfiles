@@ -6,6 +6,9 @@ export ZSH="$OMZ_HOME"
 # This has to be so as Oh My ZSH highly depends on the ZSH env variable
 export DOT_HOME="$HOME/.dotfiles"
 
+# Projects directory for development
+export DEV_HOME="$HOME/Development"
+
 # Custom theme to highlight everything
 ZSH_THEME="spaceship"
 
