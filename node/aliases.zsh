@@ -1,0 +1,1 @@
+alias npx="npm exec"
