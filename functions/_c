@@ -1,0 +1,4 @@
+#compdef c
+_files -W $DEV_HOME -/
+
+# See further documentation in `functions/c`.
