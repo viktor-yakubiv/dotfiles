@@ -17,4 +17,4 @@
 # — @holman
 
 # Run our new web 2.0 todo list application and raise millions of VC dollars.
-touch ~/Desktop/"$*"
+touch ~/Desktop/"$*.txt"
