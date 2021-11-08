@@ -61,3 +61,7 @@ do
 done
 
 unset config_files
+
+if [[ "$PWD" = "$HOME" ]]; then
+  cd "$DEV_HOME" > /dev/null
+fi
