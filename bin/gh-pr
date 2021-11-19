@@ -4,9 +4,36 @@
 #
 # If there is a PR for the current branch, opens it immediately in the browser,
 # or creates one otherwise.
+#
+# For a fresh PR it parses the branch name to retrieve labels.
+#
+# If you are not in a git repository, it suggest to review all your PRs
+# on GitHub website.
+
+branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+
+if [ $? != 0 ]; then
+  printf 'Not a git repository. Do you want to check all your PRs? (y|N): '
+  read -rn 1 answer
+
+  case $answer in
+    y | Y)
+      open 'https://github.com/pulls';;
+  esac
+
+  exit 0
+fi
 
 if gh pr status --json=number | jq '.currentBranch.number' | grep -qE '\d+'; then
   gh pr view -w
 else
-  gh pr create -w
+  assinee='@me'
+
+  label=''
+  case "${branch%%/*}" in
+    feature | enhancement) label=enhancement;;
+    fixup | bug) label=bug
+  esac
+
+  gh pr create -w -a "$assinee" -l "$label"
 fi
