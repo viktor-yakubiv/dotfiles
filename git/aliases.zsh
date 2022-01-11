@@ -1,3 +1,4 @@
+alias gai='git add --interactive'
 alias gbda="git branch --merged | egrep -v \"(^\*|master|dev)\" | xargs git branch -d"
 alias grp="git remote prune"
 alias grpo="git remote prune origin"
