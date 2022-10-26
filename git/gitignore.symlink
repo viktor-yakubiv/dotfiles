@@ -40,3 +40,7 @@ Thumbs.db
 .idea
 *.sublime-*
 *.vscode
+
+# Environments
+.vite
+node_modules
