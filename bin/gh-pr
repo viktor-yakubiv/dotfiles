@@ -24,7 +24,7 @@ if [ $? != 0 ]; then
   exit 0
 fi
 
-if gh pr status --json=number | jq '.currentBranch.number' | grep -qE '\d+'; then
+if gh pr status --json=number | yq '.currentBranch.number' | grep -qE '\d+'; then
   gh pr view -w
 else
   assinee='@me'
