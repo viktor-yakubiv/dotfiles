@@ -2,7 +2,7 @@
 
 set -e
 
-source "$DOT_HOME/.lib/log.sh"
+source "../.lib/log.sh"
 
 src="${0:a:h}"
 
