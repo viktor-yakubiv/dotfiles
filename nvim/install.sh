@@ -5,12 +5,11 @@ set -e
 source "$DOT_HOME/.lib/log.sh"
 
 src="${0:a:h}"
-src_basename=$(basename "$src")
 
 if [[ -n $XDG_CONFIG_HOME ]]; then
-	dst="$XDG_CONFIG_HOME/$src_basename"
+	dst="$XDG_CONFIG_HOME/nvim"
 else
-	dst="$HOME/.config/$src_basename"
+	dst="$HOME/.config/nvim"
 fi
 
 if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
