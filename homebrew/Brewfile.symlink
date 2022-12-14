@@ -20,3 +20,4 @@ brew "yq"
 brew "yt-dlp"
 
 cask "font-fira-code"
+cask "iterm2-beta"
