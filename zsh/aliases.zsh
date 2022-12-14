@@ -10,3 +10,7 @@ fi
 # Shortcuts for browsers
 alias ff="firefox"
 alias ch="chrome"
+
+# Programming languages
+alias py=python3
+alias js=node
