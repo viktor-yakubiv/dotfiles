@@ -1,0 +1,9 @@
+
+#!/usr/bin/env sh
+#
+# Downloads the embedded video on any web page to the current directory.
+#
+# youtube-dlp, which is awesome:
+#   https://github.com/yt-dlp/yt-dlp
+
+yt-dlp "$@"

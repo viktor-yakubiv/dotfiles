@@ -1,0 +1,17 @@
+
+#!/usr/bin/env sh
+#
+# Downloads music from YouTube (Music) into the current directory with help of
+# youtube-dlp, which is awesome:
+#   https://github.com/yt-dlp/yt-dlp
+# 
+# Conferting from WebM to MP3 requires `ffmpeg`.
+
+yt-dlp\
+	--format bestaudio\
+	--extract-audio\
+	--audio-format mp3\
+	--audio-quality 0\
+	--add-metadata\
+	--embed-thumbnail\
+	"$@"
