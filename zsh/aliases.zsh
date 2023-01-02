@@ -1,5 +1,8 @@
 alias reload!='. ~/.zshrc'
 
+# Common commads
+alias t=touch
+
 # Quick app calls
 if [[ $OSTYPE == darwin* ]]; then
   alias chrome="open -a \"Chrome Canary\""
