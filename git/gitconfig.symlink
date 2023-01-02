@@ -13,9 +13,6 @@
     rebase = true
 
 [core]
-    # Changing editor to Sublime Text explicitly
-    # as "$EDITOR -w" would not work for all applications
-    editor = "subl -w"
     excludesfile = ~/.gitignore
 
 [init]
