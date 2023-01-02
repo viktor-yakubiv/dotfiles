@@ -12,5 +12,5 @@
 #
 #   $ e .
 #   $ e /usr/local
-#   # => opens the specified directory in your editor
-exec "$EDITOR" $@
+#   # => opens the specified file list in your editor
+exec "$EDITOR" "${@:-.}"
