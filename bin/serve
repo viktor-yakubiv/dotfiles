@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+#
+# Quick shortcut to serve the current directory.
+#
+# USAGE:
+#
+#   $ serve
+#   # => runs python's http.server on port 3000 in the current directory
+#
+#   $ serve --directory public 4000
+#   # => serves the ./public directory on port 4000
+#   # => see serve --help for python's http.server help
+python3 -m http.server "${@:-3000}"
