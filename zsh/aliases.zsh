@@ -17,8 +17,3 @@ alias ch="chrome"
 # Programming languages
 alias py=python3
 alias js=node
-
-# Editor
-if nvim --version &> /dev/null; then
-	alias vim=nvim
-fi
