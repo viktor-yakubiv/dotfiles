@@ -1,24 +1,111 @@
 # Keys, encryption, password management
+#
+# I encrypt passwords using GNU Privacy Guard
+# and use Gopass to help me with that.
 brew "gnupg"
 brew "pinentry-mac" # GNUPG's UI
 brew "gopass" # Password manager based on GPG
 
-# Development and Terminal enhancement
-brew "node"
+# Terminal
+#
+# I have used iTerm for long time. When MacOS introduced automatic
+# light/dirk appearance — my favourite feature of long time,
+# iTerm did not support it, so I switched to default Terminal.
+# When I started using Neovim, it did not work quite well with
+# the Apple's Terminal, and I started using iTerm Beta 3.5 that supported
+# syncing with system appearance. At some point, I got annoyed configuring
+# iTerm and looked for alternatives.
+#
+# Now, I use Wezterm. It is configured in Lua and with 40 lines of code
+# I could get far more than with endless hours of checking iTerm's UI.
+cask "wezterm"
+brew "starship"
+
+# Neovim
+#
+# My primary editor.
+#
+# I have started my journey from Notepad++. Then, I have tried all
+# the things: Atom, Breakets, Lapce. They didn't work for me.
+#
+# I have been using JetBrains' IDEs for a while in the university
+# but suddenly moved to Sublime Text as it was faster, provided everything
+# I needed and was significantly more energy-efficient, so I could work
+# all day long on a battery. I have used Sublime Text for five years.
+# Even when everybody was talking that VS Code is de-facto standard
+# in front-end development, I was concerned about applications
+# using browser as an engine; due to the same energy-efficiency reason.
+# I was especially happy with Sublime Text v4.
+#
+# Yet, I have decided to learn Neovim at the end of 2022,
+# and it is the best editor so far. I was familiar with Vim key bindings
+# but Sublime's Vintage mode was never handy for me. The same situation was
+# with any other GUI editor and Vim extension (VS Code, Lapce).
+# Neovim can be cofigured ultimately with Lua and extended endlessly
+# with tons of open source plugins. I definitely recommend!
+# 
+# NOTE: As a Mac user, I miss nice GUI but this is the best option so far.
+brew "neovim"
+brew "fzf"
+brew "ripgrep" # Telescope uses ripgrep to search through files
+
+# Command line productivity
+#
+# Extra utilities I use often.
 brew "gh"
 brew "tree"
 brew "yq"
 brew "cheat"
+
+# Fonts
+#
+# I like nice fonts.
+# Those are the ones, I decided to keep.
+tap "homebrew/cask-fonts"
+cask "font-cascadia-code"
+cask "font-commit-mono"
 cask "font-fira-code"
-brew "starship"
-cask "iterm2-beta"
+cask "font-monaspace"
+cask "font-source-code-pro"
+
+# JavaScript Environment
+#
+# JS is my primary language.
+# Now, I use Bun as a primary JS runner
+# but time to time I run various things in others.
+#
+# Node became de-facto standard, so I perhaps cannot avoid that.
+tap "oven-sh/bun"
+brew "oven-sh/bun/bun"
+brew "deno"
+brew "node"
+
+# Offline productivity
+#
+# It appears that YouTube browser player uses more resources.
+# For longer videos, it makes sense to download them and watch offline
+# using system optimized player.
+brew "yt-dlp"
+cask "transmission"
+brew "ffmpeg" # yt-dlp uses ffmpeg to convert between formats
+cask "iina" # best free and open source video player for Mac I tried
+
+# Extra development environment
+cask "sublime-text"
+cask "sublime-merge"
+cask "visual-studio-code"
 cask "firefox-developer-edition"
 
-# Vim
-brew "fzf"
-brew "neovim"
+# Applications
+cask "signal" # secure messaging
+cask "discord" # communities
+cask "firefox" # syncing tabs with phone; I use Safari primarily
+cask "qlmarkdown" # markdown previews in Finder
+cask "android-file-transfer" # syncing data with Adnroid phone
+cask "obsidian" # note taking
+cask "figma-beta" # design work
 
-# Offline Productivity
-brew "yt-dlp"
-
-cask "signal"
+# I use external monitor and sit next to the winow.
+# This command-line utility helps me automatically adjust brightness
+# over the day to reflect ambient illuminance.
+brew "ddcctl"
