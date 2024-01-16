@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 set -e
-source '../.lib/log.sh'
+source "$(dirname "$(dirname "$0")")/.lib/log.sh"
 
 DOT_HOME="$HOME/.dotfiles" # check if exists first
 
