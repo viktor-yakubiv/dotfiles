@@ -1,6 +1,12 @@
+# Setting locale when missing
+if [[ -z "$LANG" ]]; then
+	export LANG=en_US.UTF-8
+fi
+
 # Setting up oh-my-zsh
 export OMZ_HOME="$HOME/.oh-my-zsh"
 export ZSH="$OMZ_HOME"
+
 
 # Shortcut to this dotfiles path is $DOT_HOME
 # This has to be so as Oh My ZSH highly depends on the ZSH env variable
