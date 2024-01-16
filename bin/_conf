@@ -1,0 +1,4 @@
+#compdef conf
+_files -W ~/.config -/
+
+# See further documentation in `bin/conf`.
