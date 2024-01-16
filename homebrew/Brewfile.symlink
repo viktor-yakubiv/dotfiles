@@ -1,23 +1,24 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-
-brew "cheat"
-brew "fontforge"
-brew "fonttools"
-brew "fswatch"
-brew "fzf"
-brew "gh"
+# Keys, encryption, password management
 brew "gnupg"
-brew "gopass"
-brew "neovim"
+brew "pinentry-mac" # GNUPG's UI
+brew "gopass" # Password manager based on GPG
+
+# Development and Terminal enhancement
 brew "node"
-brew "pinentry-mac"
+brew "gh"
 brew "tree"
 brew "yq"
+brew "cheat"
+cask "font-fira-code"
+brew "starship"
+cask "iterm2-beta"
+cask "firefox-developer-edition"
+
+# Vim
+brew "fzf"
+brew "neovim"
+
+# Offline Productivity
 brew "yt-dlp"
 
-cask "font-fira-code"
-cask "iterm2-beta"
+cask "signal"
