@@ -18,4 +18,7 @@ config.term = 'xterm-256color'
 merge_tables(config, require 'appearance')
 merge_tables(config, require 'keys')
 
+-- Workspaces
+require 'editor' (config)
+
 return config
