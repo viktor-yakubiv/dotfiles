@@ -1,12 +1,12 @@
 local wezterm = require 'wezterm'
-local merge_tables = require 'merge'
+local append_table = require 'append'
 
 local config = { keys = {} }
 local act = wezterm.action
 
 -- On MacOS, I got used to iTerms key binding for splitting panes.
 if wezterm.target_triple:find '-darwin' then
-	merge_tables(config.keys, {
+	append_table(config.keys, {
 		{
 			mods = 'CTRL|CMD', key = 'f',
 			action = act.ToggleFullScreen
