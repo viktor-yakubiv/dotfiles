@@ -14,10 +14,13 @@ end
 
 local config = {
 	font = wezterm.font_with_fallback {
-		'Monaspace Neon',
-		'Cascadia Code',
+		{
+			family = 'Monaspace Neon',
+			harfbuzz_features = { 'calt', 'dlig' }, -- are not enabled by default
+		},
+		'Cascadia Code', -- fallback for Cyrillic
 		'Source Code Pro',
-		-- 'Fira Code',
+		'Fira Code',
 		-- 'Apple Color Emoji',
 	},
 
