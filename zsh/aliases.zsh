@@ -3,6 +3,9 @@ alias reload!='. ~/.zshrc'
 # Common commads
 alias t=touch
 
+# Common locations
+alias dl="~/Downloads"
+
 # Quick app calls
 if [[ $OSTYPE == darwin* ]]; then
   alias chrome="open -a \"Chrome Canary\""
