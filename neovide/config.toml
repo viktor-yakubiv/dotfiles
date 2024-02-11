@@ -1,0 +1,13 @@
+[font]
+size = 14
+
+[[font.normal]]
+family = "Monaspace Neon"
+# style = "Light"
+
+[[font.normal]]
+family = "Cascadia Code" # fallback for Cyrillic
+# style = "Light"
+
+[font.features]
+Monaspace_Neon = ["+calt", "+dlig"]
