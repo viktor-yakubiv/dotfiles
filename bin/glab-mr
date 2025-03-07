@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+#
+# Smart GitLab MR resolution
+#
+# If there is a MR for the current branch, opens it immediately in the browser,
+# or creates one otherwise.
+#
+# For a fresh MR it parses the branch name to retrieve labels.
+#
+# If you are not in a git repository, it suggest to review all your MRs
+# on GitLab website.
+
+branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+
+if [ $? != 0 ]; then
+  printf 'Not a git repository. Do you want to check all your MRs? (y|N): '
+  read -rn 1 answer
+
+  case $answer in
+    y | Y)
+      open 'https://gitlab.com/dashboard/merge_requests';;
+  esac
+
+  exit 0
+fi
+
+glab mr view -w || \
+  glab mr create -w --fill --assignee yakubiv
