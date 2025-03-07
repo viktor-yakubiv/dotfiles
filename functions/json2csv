@@ -1,0 +1,5 @@
+#!/bin/zsh
+#
+# A shortcut to convert JSON input to a CSV output with jq
+
+jq -r '(.[0] | keys_unsorted) as $keys | $keys, map([.[ $keys[] ]])[] | @csv'
