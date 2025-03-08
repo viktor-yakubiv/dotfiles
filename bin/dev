@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Quick shortcut to start development watcher in the current directory.
+# It either runs `npm run dev` or serves the current directory.
+#
+# USAGE:
+#
+#   $ dev
+if npm run | grep -qE '^  dev$'; then
+	npm run dev
+elif [[ -f './Makefile' ]]; then
+	# Watch anything in the current directory, except index.html files
+	fswatch --batch-marker -e '/index[.]html$' . |
+		# and after every batch that is marked NoOp
+		grep --line-buffered '^NoOp$' |
+		# run Make
+		xargs -n1 -I{} make
+fi
