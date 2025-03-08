@@ -16,7 +16,18 @@ local config = {
 	font = wezterm.font_with_fallback {
 		{
 			family = 'Monaspace Neon',
-			harfbuzz_features = { 'calt', 'dlig' }, -- are not enabled by default
+			harfbuzz_features = { -- are not enabled by default
+				'calt', -- texture healing
+				'liga', -- repeating character sets
+				'ss01', -- === and ==
+				'ss02', -- => and <=>
+				'ss03', -- ->
+				'ss04', -- </ and />
+				'ss05', -- [| and |>
+				'ss06', -- ### and +++
+				'ss07', -- :: and :::
+				'ss08', -- ..= and .=
+			},
 		},
 		'Cascadia Code', -- fallback for Cyrillic
 		'Source Code Pro',
