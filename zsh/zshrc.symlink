@@ -14,17 +14,45 @@ export DEV_HOME="$HOME/Development"
 # Custom theme to highlight everything
 eval "$(starship init zsh)"
 
-# Antigen is a package manager to load plugins
+# Initialize autocomplete here,
+# otherwise functions won't be loaded
+# It must be done before Zgenon load for the same reason.
+autoload -U compinit
+compinit
+
+# Zgenom is a package manager to load plugins
 #
-# The manager is installed via Homebrew.
+# The manager is installed by the script install.sh
 # It can be invoked at any configuration file in this repository
 # and also in .localrc
-source /usr/local/share/antigen/antigen.zsh
+source "${HOME}/.local/share/zgenom/zgenom.zsh"
 
-# Plugins
-antigen bundle git # I've got addicted to git shorthands
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+# Check for plugin and zgenom updates every 7 days
+# This does not increase the startup time.
+zgenom autoupdate
+
+# If the init script doesn't exist
+if ! zgenom saved; then
+    echo "Creating a zgenom save"
+
+    # OhMyZsh plugins
+    zgenom ohmyzsh plugins/git
+    zgenom ohmyzsh plugins/sudo
+
+    zgenom load zsh-users/zsh-syntax-highlighting
+    zgenpm load zsh-users/zsh-history-substring-search
+    zgenom load zsh-users/zsh-autosuggestions
+    zgenpm load softmoth/zsh-vim-mode
+
+    # Completions
+    zgenom load zsh-users/zsh-completions
+
+    # Save all to init script
+    zgenom save
+
+    # Compile zsh files
+    zgenom compile "$HOME/.zshrc"
+fi
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -50,10 +78,6 @@ do
   source $file
 done
 
-# Initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
 # Load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
@@ -65,6 +89,3 @@ unset config_files
 if [[ "$PWD" = "$HOME" ]]; then
   cd "$DEV_HOME" > /dev/null
 fi
-
-# Finish loading plugins with Antigen
-antigen apply

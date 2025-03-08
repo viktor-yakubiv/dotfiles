@@ -21,12 +21,6 @@ brew "gopass" # Password manager based on GPG
 cask "wezterm"
 brew "starship"
 
-# Shell
-#
-# I used to have oh-my-zsh. However, recently I have discovered that I do not
-# use most of it. Therefore, I have decided to move to Antigen (package manager)
-brew "antigen"
-
 # Neovim
 #
 # My primary editor.
