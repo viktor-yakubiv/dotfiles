@@ -61,7 +61,6 @@ brew "cheat"
 #
 # I like nice fonts.
 # Those are the ones, I decided to keep.
-tap "homebrew/cask-fonts"
 cask "font-cascadia-code"
 cask "font-commit-mono"
 cask "font-fira-code"
