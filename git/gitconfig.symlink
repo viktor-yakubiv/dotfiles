@@ -9,9 +9,6 @@
 [rerere]
 	enabled = true
 
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
-
 [pull]
     rebase = true
 
@@ -20,6 +17,9 @@
 
 [init]
     defaultBranch = main
+
+[includeIf "gitdir:~/Development/"]
+    path = ~/.config/git/dev.gitconfig
 
 # Local/private config goes in the include
 # Overriding the current settings
