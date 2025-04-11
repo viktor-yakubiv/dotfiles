@@ -1,0 +1,5 @@
+# Config consists of local settings, so is ignored
+# Alternatively, it could be stored at ~/.local/etc/jira.yml or similar
+#
+# See functions.zsh and env.zsh for $JIRA_CONFIG_PATH end variable
+/config.yml
