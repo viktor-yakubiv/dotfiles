@@ -25,6 +25,7 @@ function jira_current_issue() {
 
 function jira_start_issue() {
 	set -e
+	git fetch origin main:main
 	git switch -c "$1" main
 
 	# if git fails, those will not exectue
