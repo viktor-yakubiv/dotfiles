@@ -1,0 +1,6 @@
+# Ignore GPG data and state
+random_seed
+private-keys*
+pubring.*
+trustdb.gpg
+*.status
