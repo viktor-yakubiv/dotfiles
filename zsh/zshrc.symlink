@@ -37,6 +37,7 @@ if ! zgenom saved; then
 
     # OhMyZsh plugins
     zgenom ohmyzsh plugins/git
+    zgenom ohmyzsh plugins/gh
     zgenom ohmyzsh plugins/sudo
 
     zgenom load zsh-users/zsh-syntax-highlighting
