@@ -3,9 +3,10 @@ if [[ -z "$LANG" ]]; then
 	export LANG=en_US.UTF-8
 fi
 
-# Shortcut to this dotfiles path is $DOT_HOME
-# It is in a transition to $ZSH after removal of oh-my-zsh
-export DOT_HOME="$HOME/.config"
+# Smart dotfiles location resolution based on the link to current file
+# Dotfiles located at ~/.config on MacOS
+# but are somewhere else in the GitHub Codespaces
+export DOT_HOME="$(dirname "$(dirname "$(readlink -f "$HOME/.zshrc")")")"
 export ZSH="$DOT_HOME"
 
 # Projects directory for development
