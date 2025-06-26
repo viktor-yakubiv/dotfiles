@@ -1,0 +1,4 @@
+# Exclude JS package lock files from diff
+bun.lock binary
+yarn.lock binary
+package-lock.json binary
