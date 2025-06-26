@@ -40,9 +40,9 @@ if ! zgenom saved; then
     zgenom ohmyzsh plugins/sudo
 
     zgenom load zsh-users/zsh-syntax-highlighting
-    zgenpm load zsh-users/zsh-history-substring-search
+    zgenom load zsh-users/zsh-history-substring-search
     zgenom load zsh-users/zsh-autosuggestions
-    zgenpm load softmoth/zsh-vim-mode
+    zgenom load softmoth/zsh-vim-mode
 
     # Completions
     zgenom load zsh-users/zsh-completions
