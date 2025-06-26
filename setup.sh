@@ -1,3 +1,3 @@
 #!/bin/bash
 
-source "$(dirname "$(readlink -f "$0")")/.bin/bootstrap"
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.bin/bootstrap"
