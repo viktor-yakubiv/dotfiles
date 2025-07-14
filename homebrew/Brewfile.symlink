@@ -94,18 +94,12 @@ brew "ffmpeg" # yt-dlp uses ffmpeg to convert between formats
 cask "iina" # best free and open source video player for Mac I tried
 
 # Extra development environment
-cask "sublime-text"
 cask "sublime-merge"
-cask "visual-studio-code"
 cask "firefox-developer-edition"
 
 # Applications
 cask "signal" # secure messaging
-cask "discord" # communities
-cask "firefox" # syncing tabs with phone; I use Safari primarily
 cask "qlmarkdown" # markdown previews in Finder
-cask "android-file-transfer" # syncing data with Adnroid phone
-cask "obsidian" # note taking
 cask "figma-beta" # design work
 
 # I use external monitor and sit next to the winow.
