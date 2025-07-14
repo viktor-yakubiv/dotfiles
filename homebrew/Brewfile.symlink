@@ -102,6 +102,7 @@ cask "firefox-developer-edition"
 cask "signal" # secure messaging
 cask "qlmarkdown" # markdown previews in Finder
 cask "figma-beta" # design work
+cask "zotero" # I do a PdD research!
 
 # I use external monitor and sit next to the winow.
 # This command-line utility helps me automatically adjust brightness
