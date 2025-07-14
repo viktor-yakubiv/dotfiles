@@ -1,3 +1,4 @@
+alias gfm="git fetch origin \$(git_main_branch):\$(git_main_branch)"
 alias gbda="git branch --merged | grep -Ev \"(^\*|master|main|dev)\" | xargs git branch -d"
 alias grp="git remote prune"
 alias grpo="git remote prune origin"
