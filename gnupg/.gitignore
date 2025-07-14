@@ -4,3 +4,6 @@ private-keys*
 pubring.*
 trustdb.gpg
 *.status
+
+# Lock files
+.\#lk0x*
