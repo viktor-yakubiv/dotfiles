@@ -94,6 +94,7 @@ brew "ffmpeg" # yt-dlp uses ffmpeg to convert between formats
 cask "iina" # best free and open source video player for Mac I tried
 
 # Extra development environment
+brew "fswatch"
 cask "sublime-merge"
 cask "firefox-developer-edition"
 
