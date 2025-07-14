@@ -1,0 +1,5 @@
+options(repos=c(CRAN="https://cran.r-project.org"))
+options(
+	styler.tab_width = 2,
+	styler.indent_by = 2
+)
