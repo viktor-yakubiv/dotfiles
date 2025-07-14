@@ -1,4 +1,4 @@
-alias gbda="git branch --merged | egrep -v \"(^\*|master|main|dev)\" | xargs git branch -d"
+alias gbda="git branch --merged | grep -Ev \"(^\*|master|main|dev)\" | xargs git branch -d"
 alias grp="git remote prune"
 alias grpo="git remote prune origin"
 alias gshn="git show --name-only"
