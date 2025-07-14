@@ -8,6 +8,7 @@ fi
 # but are somewhere else in the GitHub Codespaces
 export DOT_HOME="$(dirname "$(dirname "$(readlink -f "$HOME/.zshrc")")")"
 export ZSH="$DOT_HOME"
+export ZSH_CACHE_DIR="$HOME/.cache/zsh" # needed for ohmyzsh
 
 # Projects directory for development
 export DEV_HOME="$HOME/Development"
