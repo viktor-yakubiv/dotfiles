@@ -1,0 +1,5 @@
+[mounts]
+	path = ~/.secrets
+
+[recipients]
+	hash = aee6779c29fe731e8d74cc8560f95502ec8e4dca96426dab16697cce3165a6a5

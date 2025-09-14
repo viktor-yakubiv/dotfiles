@@ -22,6 +22,9 @@
 [includeIf "gitdir:~/Development/"]
     path = ~/.config/git/dev.gitconfig
 
+[includeIf "gitdir:/tmp"]
+    path = ~/.config/git/tmp.gitconfig
+
 # Local/private config goes in the include
 # Overriding the current settings
 [include]
