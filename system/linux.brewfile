@@ -1,0 +1,20 @@
+# Command line productivity
+#
+# Extra utilities I use often.
+brew "yq"
+brew "cheat"
+
+# Fonts
+cask "font-cascadia-code"
+cask "font-commit-mono"
+cask "font-fira-code"
+cask "font-monaspace"
+cask "font-source-code-pro"
+
+# JavaScript runtime
+# and package managemenet;
+# the most reliably installed from Homebrew
+tap "oven-sh/bun"
+brew "oven-sh/bun/bun"
+brew "deno"
+brew "node"

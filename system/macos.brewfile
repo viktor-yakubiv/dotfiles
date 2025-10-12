@@ -1,0 +1,8 @@
+# Everything that is on Linux
+file "linux.brewfile"
+
+# MacOS-only fonts
+cask "font-sf-pro"
+cask "font-sf-mono"
+cask "font-sf-compact"
+cask "font-new-york"

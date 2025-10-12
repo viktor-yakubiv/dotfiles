@@ -1,0 +1,46 @@
+# Keys, encryption, password management
+#
+# I encrypt passwords using GNU Privacy Guard
+# and use Gopass to help me with that.
+# Pinentry for MacOS provides nice system-wide GUI.
+brew "pinentry-mac"
+
+# Terminal
+#
+# I have used iTerm for long time. When MacOS introduced automatic
+# light/dirk appearance — my favourite feature of long time,
+# iTerm did not support it, so I switched to default Terminal.
+# When I started using Neovim, it did not work quite well with
+# the Apple's Terminal, and I started using iTerm Beta 3.5 that supported
+# syncing with system appearance. At some point, I got annoyed configuring
+# iTerm and looked for alternatives.
+#
+# Now, I use Wezterm. It is configured in Lua and with 40 lines of code
+# I could get far more than with endless hours of checking iTerm's UI.
+cask "wezterm"
+
+
+# Offline productivity/procrastination
+#
+# It appears that YouTube browser player uses more resources.
+# For longer videos, it makes sense to download them and watch offline
+# using system optimized player.
+brew "yt-dlp"
+cask "transmission"
+brew "ffmpeg" # yt-dlp uses ffmpeg to convert between formats
+cask "iina" # best free and open source video player for Mac I tried
+
+# Extra development environment
+cask "sublime-merge"
+cask "firefox-developer-edition"
+
+# Applications
+cask "signal" # secure messaging
+cask "qlmarkdown" # markdown previews in Finder
+cask "figma-beta" # design work
+cask "zotero" # I do a PdD research!
+
+# I use external monitor and sit next to the winow.
+# This command-line utility helps me automatically adjust brightness
+# over the day to reflect ambient illuminance.
+brew "ddcctl"
