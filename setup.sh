@@ -11,6 +11,11 @@ source "$DOTFILES_ROOT/.bin/install"
 
 # Link .config
 # if installed into a different directory
-for dir in $(cat "$DOTFILES_ROOT/dot-config.lst"); do
-	ln -s "~/.config/$dir" "$DOTFILES_ROOT/$dir"
-done
+CONFIG_HOME="$HOME/.config"
+if [ -n "$XDG_CONFIG_HOME" ]; then CONFIG_HOME="$XDG_CONFIG_HOME"; fi
+
+if realpath("$CONFIG_HOME") != realpath("$DOTFILES_ROOT"); then
+	for dir in $(cat "$DOTFILES_ROOT/dot-config.lst"); do
+		ln -s "~/.config/$dir" "$DOTFILES_ROOT/$dir"
+	done
+fi
