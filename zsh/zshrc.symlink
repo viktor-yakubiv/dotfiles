@@ -13,8 +13,23 @@ export ZSH_CACHE_DIR="$HOME/.cache/zsh" # needed for ohmyzsh
 # Projects directory for development
 export DEV_HOME="$HOME/Development"
 
-# Custom theme to highlight everything
-eval "$(starship init zsh)"
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# All of our zsh files
+typeset -U config_files
+config_files=($DOT_HOME/**/*.zsh)
+
+# Load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
 
 # Initialize autocomplete here,
 # otherwise functions won't be loaded
@@ -57,24 +72,6 @@ if ! zgenom saved; then
     zgenom compile "$HOME/.zshrc"
 fi
 
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-# All of our zsh files
-typeset -U config_files
-config_files=($DOT_HOME/**/*.zsh)
-
-# Load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
-
 # Load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
@@ -88,6 +85,9 @@ do
 done
 
 unset config_files
+
+# Custom theme to highlight everything
+eval "$(starship init zsh)"
 
 if [[ "$PWD" = "$HOME" ]]; then
   cd "$DEV_HOME" > /dev/null
