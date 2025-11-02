@@ -1,90 +1,58 @@
 # Setting locale when missing
-if [[ -z "$LANG" ]]; then
+if [ -z "$LANG" ]; then
 	export LANG=en_US.UTF-8
 fi
 
+# Essential environment
+export ZSH="$(dirname "$(readlink -f "$HOME/.zshrc")")"
+
 # Smart dotfiles location resolution based on the link to current file
 # Dotfiles located at ~/.config on MacOS
-# but are somewhere else in the GitHub Codespaces
-export DOT_HOME="$(dirname "$(dirname "$(readlink -f "$HOME/.zshrc")")")"
-export ZSH="$DOT_HOME"
-export ZSH_CACHE_DIR="$HOME/.cache/zsh" # needed for ohmyzsh
+# but are elsewhere on Linux and GitHub Codespaces
+export DOT_HOME="$(dirname "$ZSH")"
 
-# Projects directory for development
-export DEV_HOME="$HOME/Development"
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
+if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
 
 # All of our zsh files
 typeset -U config_files
 config_files=($DOT_HOME/**/*.zsh)
+config_files=(${config_files:#$ZSH/*}) # local modules are sourced manually
 
-# Load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
+# Load the env
+# it can also alter PATH
+source "$ZSH/env.zsh"
+for file in ${(M)config_files:#*/env.zsh}; do
+  source $file
+done
+
+# Load everything but the env and completion files
+source "$ZSH/fpath.zsh"
+source "$ZSH/aliases.zsh"
+source "$ZSH/cdls.zsh"
+for file in ${${config_files:#*/env.zsh}:#*/completion.zsh}; do
   source $file
 done
 
 # Initialize autocomplete here,
 # otherwise functions won't be loaded
-# It must be done before Zgenon load for the same reason.
 autoload -U compinit
 compinit
 
-# Zgenom is a package manager to load plugins
-#
-# The manager is installed by the script install.sh
-# It can be invoked at any configuration file in this repository
-# and also in .localrc
-source "${HOME}/.local/share/zgenom/zgenom.zsh"
-
-# Check for plugin and zgenom updates every 7 days
-# This does not increase the startup time.
-zgenom autoupdate
-
-# If the init script doesn't exist
-if ! zgenom saved; then
-    echo "Creating a zgenom save"
-
-    # OhMyZsh plugins
-    zgenom ohmyzsh plugins/git
-    zgenom ohmyzsh plugins/gh
-    zgenom ohmyzsh plugins/sudo
-
-    zgenom load zsh-users/zsh-syntax-highlighting
-    zgenom load zsh-users/zsh-history-substring-search
-    zgenom load zsh-users/zsh-autosuggestions
-    zgenom load softmoth/zsh-vim-mode
-
-    # Completions
-    zgenom load zsh-users/zsh-completions
-
-    # Save all to init script
-    zgenom save
-
-    # Compile zsh files
-    zgenom compile "$HOME/.zshrc"
-fi
-
-# Load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
-
 # Load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
+for file in ${(M)config_files:#*/completion.zsh}; do
   source $file
 done
 
 unset config_files
+
+# Package manager and external dependecies
+source "$ZSH/zgenom.zsh" # requires `compdef`
 
 # Custom theme to highlight everything
 eval "$(starship init zsh)"

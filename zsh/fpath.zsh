@@ -5,3 +5,4 @@ for topic_folder ($DOT_HOME/*); do
     fpath=($topic_folder $fpath)
   fi
 done
+fpath=("$ZSH/functions" $fpath)
