@@ -22,13 +22,13 @@ if test ! $(which brew); then
 fi
 
 info "Brewing core packages for all systems"
-brew bundle --file="$SCRIPT_ROOT/core.brewfile"
+brew bundle --file="$SCRIPT_ROOT/core.brew"
 
 # Brew OS-specific packages
 if [ "$(uname -s)" == "Darwin" ]; then
 	info "Brewing MacOS-scpecific packages"
-	brew bundle --file="$SCRIPT_ROOT/macos.brewfile"
+	brew bundle --file="$SCRIPT_ROOT/macos.brew"
 elif [ "$(uname -s)" == "Linux" ]; then
 	info "Brewing Linux-scpecific packages"
-	brew bundle --file="$SCRIPT_ROOT/linux.brewfile"
+	brew bundle --file="$SCRIPT_ROOT/linux.brew"
 fi
