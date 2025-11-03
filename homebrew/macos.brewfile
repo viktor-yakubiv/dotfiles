@@ -1,5 +1,4 @@
-# Everything that is on Linux
-file "linux.brewfile"
+file "core.brewfile"
 
 # MacOS-only fonts
 cask "font-sf-pro"

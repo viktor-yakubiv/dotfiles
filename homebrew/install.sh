@@ -14,7 +14,7 @@ if test ! $(which brew); then
 	# so the following script works.
 	# Otherwice, PATH should have been already set
 	# from the `.zshrc`.
-	source "$SCRIPT_ROOT/path.zsh"
+	source "$SCRIPT_ROOT/env.zsh"
 fi
 
 
@@ -24,14 +24,6 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	brew bundle --file="$SCRIPT_ROOT/macos.brewfile"
 
 elif [ "$(uname -s)" == "Linux" ]; then
-
-	# Install packages available from APT
-	if sudo -n true 2>/dev/null; then
-		sudo apt update
-		cat "$SCRIPT_ROOT/apt.lst" |
-			sed -E '/[[:space:]]*#.*$/d' |
-			xargs sudo apt install -y
-	fi
 
 	# Brew the rest
 	brew bundle --file="$SCRIPT_ROOT/linux.brewfile"
