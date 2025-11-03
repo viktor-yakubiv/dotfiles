@@ -1,6 +1,5 @@
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+if [ "$CODESPACES" = "true" ] && [ -z "$SSH_CONNECTION" ]; then
+	export EDITOR="code --wait"
 else
-  export EDITOR='nvim'
+	export EDITOR="nvim"
 fi
