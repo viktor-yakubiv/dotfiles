@@ -32,12 +32,12 @@ cask "iina" # best free and open source video player for Mac I tried
 
 # Extra development environment
 cask "sublime-merge"
-cask "firefox-developer-edition"
+cask "firefox@developer-edition"
 
 # Applications
 cask "signal" # secure messaging
 cask "qlmarkdown" # markdown previews in Finder
-cask "figma-beta" # design work
+cask "figma@beta" # design work
 cask "zotero" # I do a PdD research!
 
 # I use external monitor and sit next to the winow.
