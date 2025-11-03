@@ -5,6 +5,8 @@
 # because some packages are not available from APT,
 # and Snap is also not always available, e.g. in Codespaces
 
+set -e
+
 SCRIPT_ROOT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 if test ! $(which brew); then
@@ -17,15 +19,12 @@ if test ! $(which brew); then
 	source "$SCRIPT_ROOT/env.zsh"
 fi
 
+# Brew core packages for all systems
+brew bundle --file="$SCRIPT_ROOT/core.brewfile"
 
+# Brew OS-specific packages
 if [ "$(uname -s)" == "Darwin" ]; then
-
-	# Brew MacOS packages
 	brew bundle --file="$SCRIPT_ROOT/macos.brewfile"
-
 elif [ "$(uname -s)" == "Linux" ]; then
-
-	# Brew the rest
 	brew bundle --file="$SCRIPT_ROOT/linux.brewfile"
-
 fi

@@ -1,6 +1,4 @@
-file "core.brewfile"
-
-# MacOS-only fonts
+# MacOS-specific fonts
 cask "font-sf-pro"
 cask "font-sf-mono"
 cask "font-sf-compact"

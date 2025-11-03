@@ -1,1 +1,1 @@
-file "core.brewfile"
+# Only core packages needed on Linux so far

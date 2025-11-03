@@ -4,7 +4,7 @@
 brew "yq"
 brew "cheat"
 
-# Fonts
+# Common fonts
 cask "font-cascadia-code"
 cask "font-commit-mono"
 cask "font-fira-code"
