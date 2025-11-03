@@ -1,13 +1,13 @@
 #!/bin/bash
 
-SCRIPT_ROOT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+SCRIPT_ROOT="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 source "$(dirname "$SCRIPT_ROOT")/.lib/log.sh"
 
 # MacOS is always assumed to be desktop
 if [ "$(uname -s)" = "Darwin" ]; then
 	info "Installing desktop apps via Homebrew"
-	brew bundle "$SCRIPT_ROOT/macos.brewfile"
+	brew bundle --file "$SCRIPT_ROOT/macos.brewfile"
 
 
 # Linux is considered desktop in **some** cases;
