@@ -1,12 +1,12 @@
 #!/bin/bash
-
-SCRIPT_ROOT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
-
 # Install Homebrew
 #
 # Homebrew is needed on both MacOS and Linux
 # because some packages are not available from APT,
 # and Snap is also not always available, e.g. in Codespaces
+
+SCRIPT_ROOT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+
 if test ! $(which brew); then
 	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

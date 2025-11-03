@@ -5,7 +5,8 @@
 # This installs zgenom - a package manager for zsh
 # using Git, since it cannot be installed through Homebrew
 
-source "$(dirname "$(dirname "$(realpath "$0")")")/.lib/log.sh"
+SCRIPT_ROOT="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+source "$(dirname "$SCRIPT_ROOT")/.lib/log.sh"
 
 ZGENOM_HOME="$HOME/.local/share/zgenom"
 

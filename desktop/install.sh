@@ -1,7 +1,7 @@
 #!/bin/bash
+# Desktop apps installation from Homebrew
 
 SCRIPT_ROOT="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
-
 source "$(dirname "$SCRIPT_ROOT")/.lib/log.sh"
 
 # MacOS is always assumed to be desktop
