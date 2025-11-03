@@ -1,6 +1,6 @@
 [submodule "nvim"]
 	path = nvim
-	url = git@github.com:viktor-yakubiv/nvim.git
+	url = https://github.com/viktor-yakubiv/nvim.git
 
 [submodule "cheatsheets"]
 	path = cheat/cheatsheets/community
