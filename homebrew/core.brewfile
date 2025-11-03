@@ -1,8 +1,23 @@
-# Command line productivity
+# Neovim
+brew "neovim"
+brew "fzf"     # Telescope uses `fzf`
+brew "ripgrep" # and `rg` for search
+
+# Some syntaxes, e.g. LaTeX can only be built from source
+# and require TreeSitter CLI
+brew "tree-sitter"
+brew "tree-sitter-cli"
+
+# Productivity
 #
 # Extra utilities I use often.
-brew "yq"
 brew "cheat"
+brew "gh"
+brew "just"
+brew "yq"
+
+# Shell
+brew "starship" # nice command line styling
 
 # Common fonts
 cask "font-cascadia-code"
