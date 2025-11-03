@@ -1,28 +1,20 @@
-[user]
-    name = Viktor Yakubiv
-    email = viktor@yakubiv.com
-    signingkey = EE06887C8A8557F0
-
-[commit]
-    gpgsign = true
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 
 [rerere]
 	enabled = true
 
 [pull]
-    rebase = true
-
-[core]
-    excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
+	rebase = true
 
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [includeIf "gitdir:~/Development/"]
-    path = ~/.config/git/dev.gitconfig
+	path = ~/.config/git/dev.gitconfig
 
 # Local/private config goes in the include
 # Overriding the current settings
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local

@@ -1,0 +1,10 @@
+[user]
+	name = Viktor Yakubiv
+	email = viktor@yakubiv.com
+	signingkey = EE06887C8A8557F0
+
+[commit]
+	gpgsign = true
+
+[credential]
+	helper = GIT_CREDENTIAL_HELPER
