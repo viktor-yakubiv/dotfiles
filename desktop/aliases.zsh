@@ -1,8 +1,3 @@
-alias reload!='. ~/.zshrc'
-
-# Common commads
-alias t=touch
-
 # Common locations
 alias dl="~/Downloads"
 
@@ -16,11 +11,3 @@ fi
 # Shortcuts for browsers
 alias ff="firefox"
 alias ch="chrome"
-
-# Programming languages
-alias py=python3
-alias js=node
-
-# Vim-shortcuts, I've got used to
-alias :q="exit"
-alias q="exit"
