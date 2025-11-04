@@ -10,10 +10,7 @@ source "$(dirname "$SCRIPT_ROOT")/.lib/log.sh"
 
 ZGENOM_HOME="$HOME/.local/share/zgenom"
 
-mkdir -p "$ZGENOM_HOME"
-if [ -d "$ZGENOM_HOME" ]; then
-	info 'Zgenom seems to be installed. Skipping...'
-else
+if ! [ -d "$ZGENOM_HOME" ]; then
 	info "Clonning Zgenom to `$ZGENOM_HOME`"
 	git clone https://github.com/jandamm/zgenom.git "$ZGENOME_HOME"
 fi
