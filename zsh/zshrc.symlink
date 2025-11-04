@@ -32,7 +32,7 @@ for file in ${(M)config_files:#*/env.zsh}; do
 done
 
 # Load everything but the env and completion files
-source "$ZSH/fpath.zsh"
+source "$ZSH/functions.zsh"
 source "$ZSH/cdls.zsh"
 for file in ${${config_files:#*/env.zsh}:#*/completion.zsh}; do
   source $file

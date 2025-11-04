@@ -6,3 +6,4 @@ for topic_folder ($DOT_HOME/*); do
   fi
 done
 fpath=("$ZSH/functions" $fpath)
+autoload -U $ZSH/functions/*(:t)
